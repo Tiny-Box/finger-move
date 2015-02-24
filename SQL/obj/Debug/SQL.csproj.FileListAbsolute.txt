@@ -1,0 +1,32 @@
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\bin\Debug\SQL.exe.config
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\bin\Debug\SQL.exe
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\bin\Debug\SQL.pdb
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL.csprojResolveAssemblyReference.cache
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\MainWindow.baml
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\MainWindow.g.cs
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\App.g.cs
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL_MarkupCompile.cache
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL.g.resources
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL.Properties.Resources.resources
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL.csproj.GenerateResource.Cache
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL.exe
+c:\users\tinybox\documents\visual studio 2013\Projects\SQL\SQL\obj\Debug\SQL.pdb
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\Log.baml
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\Log.g.cs
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\SpotIntro.baml
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\SpotIntro.g.cs
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\Spot.mdf
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\Spot_log.ldf
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\EntityFramework.dll
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\EntityFramework.xml
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\SQL_Content.g.cs
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\Way.baml
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\Way.g.cs
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\detail.baml
+C:\Users\TinyBox\Documents\Visual Studio 2013\Projects\SQL\SQL\obj\Debug\detail.g.cs
+E:\联想备份\SQL\SQL\bin\Debug\SQL.exe.config
+E:\联想备份\SQL\SQL\obj\Debug\SQL.exe
+E:\联想备份\SQL\SQL\obj\Debug\SQL.pdb

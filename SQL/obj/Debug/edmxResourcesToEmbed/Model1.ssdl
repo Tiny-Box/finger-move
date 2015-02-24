@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="fare">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="外滩" Type="int" />
+    <Property Name="东方明珠" Type="int" />
+    <Property Name="城隍庙" Type="int" />
+    <Property Name="上海环球金融中心" Type="int" />
+    <Property Name="上海野生动物园" Type="int" />
+    <Property Name="朱家角古镇" Type="int" />
+    <Property Name="上海博物馆" Type="int" />
+    <Property Name="新天地" Type="int" />
+    <Property Name="上海杜莎夫人蜡像馆" Type="int" />
+    <Property Name="欢乐谷" Type="int" />
+    <Property Name="上海科技馆" Type="int" />
+    <Property Name="田子坊" Type="int" />
+    <Property Name="豫园" Type="int" />
+    <Property Name="上海植物园" Type="int" />
+    <Property Name="上海海洋水族馆" Type="int" />
+    <Property Name="金茂大厦88层观光厅" Type="int" />
+    <Property Name="外白渡桥" Type="int" />
+    <Property Name="巧克力开心公园" Type="int" />
+    <Property Name="佘山国家森林公园" Type="int" />
+    <Property Name="七宝老街" Type="int" />
+    <Property Name="宋庆龄故居纪念馆" Type="int" />
+    <Property Name="徐家汇天主教堂" Type="int" />
+    <Property Name="中华艺术宫" Type="int" />
+    <Property Name="南京路步行街" Type="int" />
+    <Property Name="张爱玲故居" Type="int" />
+    <Property Name="人民广场" Type="int" />
+  </EntityType>
+  <EntityType Name="number">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="_1" Type="varchar" MaxLength="20" />
+    <Property Name="_2to3" Type="varchar" MaxLength="20" />
+    <Property Name="_4to8" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="times">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="_0to1h" Type="varchar" MaxLength="20" />
+    <Property Name="_1to3h" Type="varchar" MaxLength="20" />
+    <Property Name="over3h" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="type">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="study" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="entertainment" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="sightseeing" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="景点介绍">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="名称" Type="varchar" MaxLength="40" />
+    <Property Name="地址" Type="varchar" MaxLength="100" />
+    <Property Name="门票" Type="varchar" MaxLength="5" />
+    <Property Name="开放时间" Type="varchar" MaxLength="20" />
+    <Property Name="简介" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <Association Name="FK__fare__序号__51300E55">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="fare" Type="Self.fare" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="fare">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__number__序号__58D1301D">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="number" Type="Self.number" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="number">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__times__序号__55F4C372">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="times" Type="Self.times" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="times">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__type__序号__5CA1C101">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="type" Type="Self.type" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="type">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SpotModelStoreContainer">
+    <EntitySet Name="fare" EntityType="Self.fare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="number" EntityType="Self.number" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="times" EntityType="Self.times" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type" EntityType="Self.type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="景点介绍" EntityType="Self.景点介绍" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__fare__序号__51300E55" Association="Self.FK__fare__序号__51300E55">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="fare" EntitySet="fare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__number__序号__58D1301D" Association="Self.FK__number__序号__58D1301D">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="number" EntitySet="number" />
+    </AssociationSet>
+    <AssociationSet Name="FK__times__序号__55F4C372" Association="Self.FK__times__序号__55F4C372">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="times" EntitySet="times" />
+    </AssociationSet>
+    <AssociationSet Name="FK__type__序号__5CA1C101" Association="Self.FK__type__序号__5CA1C101">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="type" EntitySet="type" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,176 @@
+﻿<Window x:Class="SQL.MainWindow"
+        WindowStyle="None" Background="{x:Null}"  AllowsTransparency="True"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="640">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="ellipse">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse x:Name="ellipse" Fill="{TemplateBinding Background}">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Opacity="0.215"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,10,10">
+
+        <Rectangle x:Name="background" Fill="#FF82BEBF" RadiusX="10" RadiusY="10" MouseDown="Rectangle_MouseDown" Loaded="background_Loaded" >
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button x:Name="ButtonExit" Content="X" HorizontalAlignment="Right" Height="30" Margin="0,9.997,20.6,0" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Top" Width="30" Foreground="White" Background="#FFDE7721" IsCancel="True" Click="ButtonExit_Click" />
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="60" Margin="89,392,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Effect>
+                <BlurEffect Radius="91"/>
+            </Rectangle.Effect>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.714"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF4C9EC0" HorizontalAlignment="Left" Height="295" Margin="63,154,0,0" VerticalAlignment="Top" Width="115" RadiusX="10" RadiusY="10">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="295" Margin="63,154,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="115" MouseDown="Rectangle_MouseDown_1">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#1EFFFFFF" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="60" Margin="323,188,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Effect>
+                <BlurEffect Radius="91"/>
+            </Rectangle.Effect>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.714"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="60" Margin="495,188,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Effect>
+                <BlurEffect Radius="91"/>
+            </Rectangle.Effect>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.714"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FFF1C96A" HorizontalAlignment="Left" Height="100" Margin="275,154,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="285">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="275,154,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="285" MouseDown="Rectangle_MouseDown_2">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#1EFFFFFF" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="60" Margin="326,388,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Effect>
+                <BlurEffect Radius="91"/>
+            </Rectangle.Effect>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.714"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="60" Margin="495,388,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Effect>
+                <BlurEffect Radius="91"/>
+            </Rectangle.Effect>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.714"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FFF1A46D" HorizontalAlignment="Left" Height="100" Margin="275,346,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="285">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="275,347,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="285" MouseDown="Rectangle_MouseDown_3">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#1EFFFFFF" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Margin="90,354,452,41" TextWrapping="Wrap" Text="记" VerticalAlignment="Stretch" FontSize="80" Foreground="#4CFFFFFF" TextAlignment="Right" FontWeight="Bold"/>
+        <TextBlock Margin="471,353,71,42" TextWrapping="Wrap" Text="推" VerticalAlignment="Stretch" FontSize="80" Foreground="#4CFFFFFF" TextAlignment="Right" FontWeight="Bold"/>
+        <TextBlock Margin="471,156,71,239" TextWrapping="Wrap" Text="景" VerticalAlignment="Stretch" FontSize="80" Foreground="#4CFFFFFF" TextAlignment="Right" FontWeight="Bold"/>
+        <Image x:Name="Image1" HorizontalAlignment="Left" Height="120" Margin="63,10,0,0" VerticalAlignment="Top" Width="212" Stretch="Fill"/>
+    </Grid>
+</Window>

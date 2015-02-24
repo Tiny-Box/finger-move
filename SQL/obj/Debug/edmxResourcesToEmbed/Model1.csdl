@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="fare">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="外滩" Type="Int32" />
+    <Property Name="东方明珠" Type="Int32" />
+    <Property Name="城隍庙" Type="Int32" />
+    <Property Name="上海环球金融中心" Type="Int32" />
+    <Property Name="上海野生动物园" Type="Int32" />
+    <Property Name="朱家角古镇" Type="Int32" />
+    <Property Name="上海博物馆" Type="Int32" />
+    <Property Name="新天地" Type="Int32" />
+    <Property Name="上海杜莎夫人蜡像馆" Type="Int32" />
+    <Property Name="欢乐谷" Type="Int32" />
+    <Property Name="上海科技馆" Type="Int32" />
+    <Property Name="田子坊" Type="Int32" />
+    <Property Name="豫园" Type="Int32" />
+    <Property Name="上海植物园" Type="Int32" />
+    <Property Name="上海海洋水族馆" Type="Int32" />
+    <Property Name="金茂大厦88层观光厅" Type="Int32" />
+    <Property Name="外白渡桥" Type="Int32" />
+    <Property Name="巧克力开心公园" Type="Int32" />
+    <Property Name="佘山国家森林公园" Type="Int32" />
+    <Property Name="七宝老街" Type="Int32" />
+    <Property Name="宋庆龄故居纪念馆" Type="Int32" />
+    <Property Name="徐家汇天主教堂" Type="Int32" />
+    <Property Name="中华艺术宫" Type="Int32" />
+    <Property Name="南京路步行街" Type="Int32" />
+    <Property Name="张爱玲故居" Type="Int32" />
+    <Property Name="人民广场" Type="Int32" />
+    <NavigationProperty Name="景点介绍" Relationship="Self.FK__fare__序号__51300E55" FromRole="fare" ToRole="景点介绍" />
+  </EntityType>
+  <EntityType Name="number">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="C_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_2to3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_4to8" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="景点介绍" Relationship="Self.FK__number__序号__58D1301D" FromRole="number" ToRole="景点介绍" />
+  </EntityType>
+  <EntityType Name="times">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="C_0to1h" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_1to3h" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="over3h" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="景点介绍" Relationship="Self.FK__times__序号__55F4C372" FromRole="times" ToRole="景点介绍" />
+  </EntityType>
+  <EntityType Name="type">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="study" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="entertainment" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sightseeing" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="景点介绍" Relationship="Self.FK__type__序号__5CA1C101" FromRole="type" ToRole="景点介绍" />
+  </EntityType>
+  <EntityType Name="景点介绍">
+    <Key>
+      <PropertyRef Name="序号" />
+    </Key>
+    <Property Name="序号" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="名称" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="地址" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="门票" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="开放时间" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="简介" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="fare" Relationship="Self.FK__fare__序号__51300E55" FromRole="景点介绍" ToRole="fare" />
+    <NavigationProperty Name="number" Relationship="Self.FK__number__序号__58D1301D" FromRole="景点介绍" ToRole="number" />
+    <NavigationProperty Name="times" Relationship="Self.FK__times__序号__55F4C372" FromRole="景点介绍" ToRole="times" />
+    <NavigationProperty Name="type" Relationship="Self.FK__type__序号__5CA1C101" FromRole="景点介绍" ToRole="type" />
+  </EntityType>
+  <Association Name="FK__fare__序号__51300E55">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="fare" Type="Self.fare" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="fare">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__number__序号__58D1301D">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="number" Type="Self.number" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="number">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__times__序号__55F4C372">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="times" Type="Self.times" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="times">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__type__序号__5CA1C101">
+    <End Role="景点介绍" Type="Self.景点介绍" Multiplicity="1" />
+    <End Role="type" Type="Self.type" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="景点介绍">
+        <PropertyRef Name="序号" />
+      </Principal>
+      <Dependent Role="type">
+        <PropertyRef Name="序号" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SpotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="fare" EntityType="Self.fare" />
+    <EntitySet Name="number" EntityType="Self.number" />
+    <EntitySet Name="times" EntityType="Self.times" />
+    <EntitySet Name="type" EntityType="Self.type" />
+    <EntitySet Name="景点介绍" EntityType="Self.景点介绍" />
+    <AssociationSet Name="FK__fare__序号__51300E55" Association="Self.FK__fare__序号__51300E55">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="fare" EntitySet="fare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__number__序号__58D1301D" Association="Self.FK__number__序号__58D1301D">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="number" EntitySet="number" />
+    </AssociationSet>
+    <AssociationSet Name="FK__times__序号__55F4C372" Association="Self.FK__times__序号__55F4C372">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="times" EntitySet="times" />
+    </AssociationSet>
+    <AssociationSet Name="FK__type__序号__5CA1C101" Association="Self.FK__type__序号__5CA1C101">
+      <End Role="景点介绍" EntitySet="景点介绍" />
+      <End Role="type" EntitySet="type" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

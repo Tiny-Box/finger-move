@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpotModelStoreContainer" CdmEntityContainer="SpotEntities">
+    <EntitySetMapping Name="fare">
+      <EntityTypeMapping TypeName="SpotModel.fare">
+        <MappingFragment StoreEntitySet="fare">
+          <ScalarProperty Name="序号" ColumnName="序号" />
+          <ScalarProperty Name="外滩" ColumnName="外滩" />
+          <ScalarProperty Name="东方明珠" ColumnName="东方明珠" />
+          <ScalarProperty Name="城隍庙" ColumnName="城隍庙" />
+          <ScalarProperty Name="上海环球金融中心" ColumnName="上海环球金融中心" />
+          <ScalarProperty Name="上海野生动物园" ColumnName="上海野生动物园" />
+          <ScalarProperty Name="朱家角古镇" ColumnName="朱家角古镇" />
+          <ScalarProperty Name="上海博物馆" ColumnName="上海博物馆" />
+          <ScalarProperty Name="新天地" ColumnName="新天地" />
+          <ScalarProperty Name="上海杜莎夫人蜡像馆" ColumnName="上海杜莎夫人蜡像馆" />
+          <ScalarProperty Name="欢乐谷" ColumnName="欢乐谷" />
+          <ScalarProperty Name="上海科技馆" ColumnName="上海科技馆" />
+          <ScalarProperty Name="田子坊" ColumnName="田子坊" />
+          <ScalarProperty Name="豫园" ColumnName="豫园" />
+          <ScalarProperty Name="上海植物园" ColumnName="上海植物园" />
+          <ScalarProperty Name="上海海洋水族馆" ColumnName="上海海洋水族馆" />
+          <ScalarProperty Name="金茂大厦88层观光厅" ColumnName="金茂大厦88层观光厅" />
+          <ScalarProperty Name="外白渡桥" ColumnName="外白渡桥" />
+          <ScalarProperty Name="巧克力开心公园" ColumnName="巧克力开心公园" />
+          <ScalarProperty Name="佘山国家森林公园" ColumnName="佘山国家森林公园" />
+          <ScalarProperty Name="七宝老街" ColumnName="七宝老街" />
+          <ScalarProperty Name="宋庆龄故居纪念馆" ColumnName="宋庆龄故居纪念馆" />
+          <ScalarProperty Name="徐家汇天主教堂" ColumnName="徐家汇天主教堂" />
+          <ScalarProperty Name="中华艺术宫" ColumnName="中华艺术宫" />
+          <ScalarProperty Name="南京路步行街" ColumnName="南京路步行街" />
+          <ScalarProperty Name="张爱玲故居" ColumnName="张爱玲故居" />
+          <ScalarProperty Name="人民广场" ColumnName="人民广场" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="number">
+      <EntityTypeMapping TypeName="SpotModel.number">
+        <MappingFragment StoreEntitySet="number">
+          <ScalarProperty Name="序号" ColumnName="序号" />
+          <ScalarProperty Name="C_1" ColumnName="_1" />
+          <ScalarProperty Name="C_2to3" ColumnName="_2to3" />
+          <ScalarProperty Name="C_4to8" ColumnName="_4to8" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="times">
+      <EntityTypeMapping TypeName="SpotModel.times">
+        <MappingFragment StoreEntitySet="times">
+          <ScalarProperty Name="序号" ColumnName="序号" />
+          <ScalarProperty Name="C_0to1h" ColumnName="_0to1h" />
+          <ScalarProperty Name="C_1to3h" ColumnName="_1to3h" />
+          <ScalarProperty Name="over3h" ColumnName="over3h" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type">
+      <EntityTypeMapping TypeName="SpotModel.type">
+        <MappingFragment StoreEntitySet="type">
+          <ScalarProperty Name="序号" ColumnName="序号" />
+          <ScalarProperty Name="study" ColumnName="study" />
+          <ScalarProperty Name="entertainment" ColumnName="entertainment" />
+          <ScalarProperty Name="sightseeing" ColumnName="sightseeing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="景点介绍">
+      <EntityTypeMapping TypeName="SpotModel.景点介绍">
+        <MappingFragment StoreEntitySet="景点介绍">
+          <ScalarProperty Name="序号" ColumnName="序号" />
+          <ScalarProperty Name="名称" ColumnName="名称" />
+          <ScalarProperty Name="地址" ColumnName="地址" />
+          <ScalarProperty Name="门票" ColumnName="门票" />
+          <ScalarProperty Name="开放时间" ColumnName="开放时间" />
+          <ScalarProperty Name="简介" ColumnName="简介" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

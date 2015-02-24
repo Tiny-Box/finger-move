@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb48b7a2fcff465598c0e485c89d8529" Name="Diagram1">
+        <EntityTypeShape EntityType="SpotModel.fare" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpotModel.number" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpotModel.times" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpotModel.type" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SpotModel.景点介绍" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="SpotModel.FK__fare__序号__51300E55" ManuallyRouted="false" />
+        <AssociationConnector Association="SpotModel.FK__number__序号__58D1301D" ManuallyRouted="false" />
+        <AssociationConnector Association="SpotModel.FK__times__序号__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="SpotModel.FK__type__序号__5CA1C101" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

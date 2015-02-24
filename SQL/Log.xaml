@@ -1,0 +1,224 @@
+﻿<Window x:Class="SQL.Log"
+        WindowStyle="None" Background="{x:Null}"  AllowsTransparency="True"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Log" Height="500" Width="640">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="ellipse">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse x:Name="ellipse" Fill="{TemplateBinding Background}">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="1" Opacity="0.215"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid1" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ellipse">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="grid">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="grid1">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1.5"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid1">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1.5"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ellipse">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Viewbox x:Name="viewbox" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                                <Viewbox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Viewbox.RenderTransform>
+                                <Grid x:Name="grid" Height="160" Width="262.062" RenderTransformOrigin="0.5,0.5">
+                                    <Grid.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Grid.RenderTransform>
+                                    <Grid.Effect>
+                                        <DropShadowEffect Opacity="0.405" ShadowDepth="12"/>
+                                    </Grid.Effect>
+                                    <Rectangle x:Name="rectangle" RadiusX="10" Margin="0" Fill="{TemplateBinding Background}" RadiusY="10" RenderTransformOrigin="0.5,0.5" Stroke="#C1FFFFFF">
+                                        <Rectangle.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform/>
+                                                <SkewTransform/>
+                                                <RotateTransform/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </Rectangle.RenderTransform>
+                                        <Rectangle.Effect>
+                                            <DropShadowEffect ShadowDepth="2" Opacity="0.445"/>
+                                        </Rectangle.Effect>
+                                    </Rectangle>
+                                    <Rectangle Margin="0">
+                                        <Rectangle.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#1FFFFFFF" Offset="0"/>
+                                                <GradientStop Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Ellipse x:Name="ellipse" Margin="-31.447,-19.394,-20.965,0" Stroke="{x:Null}" HorizontalAlignment="Stretch" Height="81.567" VerticalAlignment="Top" Width="Auto" >
+                                        <Ellipse.Effect>
+                                            <BlurEffect Radius="0"/>
+                                        </Ellipse.Effect>
+                                        <Ellipse.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#39FFFFFF" Offset="0"/>
+                                                <GradientStop Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Grid>
+                            </Viewbox>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <ContentPresenter.Effect>
+                                    <DropShadowEffect ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                                </ContentPresenter.Effect>
+                            </ContentPresenter>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Rectangle x:Name="background" Fill="#FF4C9EC0" RadiusX="10" RadiusY="10" MouseDown="Rectangle_MouseDown" Margin="0,0,10,10" >
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Button x:Name="ButtonExit" Content="X" HorizontalAlignment="Right" Height="30" Margin="0,9.997,20.6,0" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Top" Width="30" Foreground="White" Background="#FFDE7721" IsCancel="True" Click="ButtonExit_Click" />
+        <Rectangle Fill="#E5CE5251" HorizontalAlignment="Left" Height="45" Margin="32,25,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="526">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle Fill="#E5F2DEA0" HorizontalAlignment="Left" Height="267" Margin="32,117,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="561">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.45" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <TextBox x:Name="title" HorizontalAlignment="Left" Height="39" Margin="45,31,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Width="504" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#E5BE5455" FontFamily="Andy" FontSize="45" AllowDrop="True" IsHitTestVisible="True" BorderThickness="0" />
+        <TextBox x:Name="context" HorizontalAlignment="Left" Height="267" Margin="45,117,0,0" TextWrapping="Wrap" Text="Day1:" VerticalAlignment="Top" Width="536" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Background="#E5DED19C" FontFamily="Verdana" FontSize="18" BorderThickness="0"/>
+        <Button x:Name="ButtonT" Content="保存" HorizontalAlignment="Left" Height="33" Margin="152,0,0,35" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Bottom" Width="100" Foreground="White" FontSize="14" Background="#FFABBC44" IsDefault="True" Click="ButtonS_Click">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="Disabled"/>
+                    <VisualState x:Name="ReadOnly"/>
+                    <VisualState x:Name="MouseOver"/>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused"/>
+                    <VisualState x:Name="Focused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+        <Button x:Name="ButtonQ" Content="清空" HorizontalAlignment="Right" Height="33" Margin="0,0,152,35" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Bottom" Width="100" Foreground="White" FontSize="14" Background="#FFB29E40" Click="ButtonQ_Click">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates1">
+                    <VisualState x:Name="Normal1"/>
+                    <VisualState x:Name="Disabled1"/>
+                    <VisualState x:Name="ReadOnly1"/>
+                    <VisualState x:Name="MouseOver1"/>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates1">
+                    <VisualState x:Name="Unfocused1"/>
+                    <VisualState x:Name="Focused1"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+    </Grid>
+</Window>
